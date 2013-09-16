@@ -1,0 +1,32 @@
+HW1  WebCrawler
+
+Here this program fulfills most tasks in HW1's requirement.
+1. get a certain number of google url results in descending order of importance using google.ajax.apps/json lib
+2. get HTTPError and URLError when connection is not available, and skip failure or password-protected pages
+3. HTML/XMLParser 
+4. comply with Robots Exclusion Protocol, and check if URLs can be fetched.
+5. filter CGI scripts and pages of unwanted MIME types  
+6. use different kinds of data structures here:
+	queue: BFS
+	list: store all the visited URLs and their infomation in their visiting order.
+	dictionary: store all succuessfully-downloaded pages without duplicates, and store length, timestamp, feedback in the Value(List)
+	set: make a variable Next_layer_Set, which can hold next-depth URLs without duplicates.
+7. download the pages and do a statistic about total time, total size, total number of pages
+8. set max_depth and max_pages in the program
+
+
+
+The follow-ups can be improved:
+
+1. no javascript parser   (linkedin uses javascript to avoid crawling)
+
+2. Different URLs may point to same page. This problem is not solved. 
+(e.g. cis.poly.edu  & csserv2.poly.edu)
+
+3. In addition, a multi-thread/distributed way should make much progress.
+
+4. Maybe Bloom Filter is a good idea to remove page's duplicates.
+
+5. The code parses the URL's robot exclusion protocol everytime it gets new URL,but it's not necessary to do it  and can be improved. 
+
+6. Several pages can be saved as a XML file and be compressed.
